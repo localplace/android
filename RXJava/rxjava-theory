@@ -4,14 +4,26 @@ Functional Programming Concepts :- making it predictable and thread safe
 
 a) Pure Functions  :- with no sideeffects 
 
-// with same set of parameters will get same result every time example SideEffectIllustration.java 
+1) with same set of parameters will get same result every time example SideEffectIllustration.java 
+
+a)No sideeffect caused by Class or Instance state
+
+b)No sideeffect effects caused by I/O devices
+
+c) No time related side effects.
+
+Functions as first class citizens
+a) FirstClassCitizenParameterIllustration.java and FirstClassCitizenVariableIllustration.java
+
+1) Variables may contain functions 
+2) funcation can be passed as parameters 
 
 
-b) functions as first class citizens
+High Order functions  :- functions that return other functions 
 
-c) High Order functions  :- functions that return other functions 
+functions that take functions and return a composite functions.
 
-
+HighOrderFunctionIllustration.java
 
 Reactive Programming Concepts
 
