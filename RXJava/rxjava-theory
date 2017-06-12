@@ -1,0 +1,25 @@
+Functional Reactive Concepts
+
+Functional Programming Concepts :- making it predictable and thread safe 
+
+a) Pure Functions  :- with no sideeffects 
+
+// with same set of parameters will get same result every time example SideEffectIllustration.java 
+
+
+b) functions as first class citizens
+
+c) High Order functions  :- functions that return other functions 
+
+
+
+Reactive Programming Concepts
+
+a) Reactive Manifesto :- Event Driven, works well with concurrency and decouple certain modules from each other 
+
+b) Make applications scalable.
+
+c) applications resilient to changes in load
+
+
+
