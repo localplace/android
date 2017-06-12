@@ -27,11 +27,49 @@ HighOrderFunctionIllustration.java
 
 Reactive Programming Concepts
 
-a) Reactive Manifesto :- Event Driven, works well with concurrency and decouple certain modules from each other 
+a) Reactive Manifesto :- Event Driven, works well with facilitates concurrency and decouple certain modules from each other , maintainable and extensible.
+
+Event driven :- Observer Pattern 
+
+a) Observable 
+
+b) observers, these subscribe themenselves to the observables. then any changes to the obseravable are sent to the observers as notifications.
+
+Obseravable<T> a particular type of events, Observer will observe that event. 
+
+Event of type T, then that notification is sent to each observer.
+
+
+for example
+
+Observable<User> returns a list of users. Observer will filter out users that is not an admin. Rxjava has lot of schedulers, that handles the threading for us.
+
+sends to 
+
+grouping of users can be done serialized 
+
+sends to
+map orm user to json 	
+
 
 b) Make applications scalable.
 
+Scalable, if there is more load, then we need to create new instances of our applications
+
+as they are done in parallel, so it becomes a faster way in executing
+
+
 c) applications resilient to changes in load
 
+if there are failures, services goes down, we want apps to ahndle gracefully.
 
+Graceful Error Handling.
+if a failing system had impact on other elements of our system.  
+
+d)Responsive
+Maximum use of available resources.
+
+Observable Data Models :- MVVM pattern , when data modesls are updated , then view models are updated , ui is refreshed.
+
+Users generate streams of events by their actions 
 
