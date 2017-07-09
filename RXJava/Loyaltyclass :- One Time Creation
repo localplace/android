@@ -1,0 +1,62 @@
+Loyaltyclass :- One Time Creation 
+Manually through Save to Android Pay Console.
+
+https://wallet.google.com/merchant/walletobjects/3145490035071373809/classes/
+
+or through insert request
+
+1) Id :- Unique to class
+2) issuerName :- Tesco
+3) programLogo :- host it in s3 image
+4) programName :- Tesco Clubcard
+
+
+Optional
+
+5) Account Name Label : Member name 
+6) Account ID Label :- Clubcard number
+
+LoyaltyClass wobClass = new LoyaltyClass()
+        .setId(issuerId + "." + classId)
+        .setIssuerName("Baconrista")
+        .setProgramName("Baconrista Rewards")
+        .setProgramLogo(
+            new Image().setSourceUri(new Uri()
+                .setUri("http://farm8.staticflickr.com/7340/11177041185_a61a7f2139_o.jpg")))
+        .setRewardsTierLabel("Tier").setRewardsTier("Gold")
+        .setImageModulesData(imageModuleData)
+        .setTextModulesData(textModulesData)
+        .setLinksModuleData(linksModuleData)
+        .setInfoModuleData(infoModuleData)
+        .setAccountNameLabel("Member Name").setAccountIdLabel("Member Id")
+        .setMessages(messages)
+        .setReviewStatus("underReview").setAllowMultipleUsersPerObject(true)
+        .setLocations(locations);
+
+Background color :- 008dc8
+
+------------------------------------------------------
+
+LoyaltyObject
+
+
+Loyalty Type Object. 
+
+
+
+a) Hero Image
+b) Logo Image 
+
+LoyaltyObject :- 
+
+
+
+1) Save to Android Pay
+   
+
+
+
+
+	tesco.clubcard.application@gmail.com
+	T3sc0@2020
+
