@@ -13,6 +13,7 @@ b)No sideeffect effects caused by I/O devices
 c) No time related side effects.
 
 Functions as first class citizens
+
 a) FirstClassCitizenParameterIllustration.java and FirstClassCitizenVariableIllustration.java
 
 1) Variables may contain functions 
@@ -24,6 +25,9 @@ High Order functions  :- functions that return other functions
 functions that take functions and return a composite functions.
 
 HighOrderFunctionIllustration.java
+
+--------------------------------------------------
+
 
 Reactive Programming Concepts
 
@@ -72,4 +76,29 @@ Maximum use of available resources.
 Observable Data Models :- MVVM pattern , when data modesls are updated , then view models are updated , ui is refreshed.
 
 Users generate streams of events by their actions 
+
+
+-----------------------------------------------------
+
+
+Module 2 
+Observable Creations, Composition and Filtering
+
+
+Observable Creation  , how to create observables, lifecycle of observable, and basics of how RXJAVA 
+
+Composition :- 
+
+Filtering  :- How to filter 
+
+
+Observer Creation Lifecycle Theort
+
+Observer -->  Observer Interface -> methods onNext(T), onComplete(T), onError(Throwable T);
+
+Subscription -> Subscription Interface . -> single unsubscribe to detach the observer from the observable to which its subscribed
+
+
+
+
 
