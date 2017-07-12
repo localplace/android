@@ -99,6 +99,40 @@ Observer -->  Observer Interface -> methods onNext(T), onComplete(T), onError(Th
 Subscription -> Subscription Interface . -> single unsubscribe to detach the observer from the observable to which its subscribed
 
 
+Two Types of Observables supported by RxJava
+
+a) Non blocking Observables -> async execution, unsubscribe at any point in the event stream.
+
+b) Blocking Observable :- Events are synchronous , no ability to unsubscribe. 
+
+RxJava will give us the ability to execute on different threads using Scheduleers.
+Schedulers have many prepackaged options, these include
+compultaion :-  number of threads available equivalent number of process cores within computer.
+
+currentThread :- Indicated that current work is finished , your event code should run on current thread
+
+immediate :- contrast to current thread, 
+
+io :- long running i/o network communication, thread pool waiting i/o threads
+
+newthread :- new thread created for each unit of work
+
+executor :- executor interface, to scheduler interface 
+
+
+Observables :- RxJava is Single Thread by default.
+subscribeOn(Scheduler); if subscribeOn not mentioned, then the current thread will be used to drive the subscribe on.
+
+of observeOn is not mentioned it will use the scheduler from the subscribeOn 
+
+Observable Creation
+
+a) Observable.from ->
+
+adding compile 'io.reactivex:rxjava:1.1.6'  to the classPath, fixes 
+
+
+
 
 
 
