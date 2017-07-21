@@ -131,6 +131,143 @@ a) Observable.from ->
 
 adding compile 'io.reactivex:rxjava:1.1.6'  to the classPath, fixes 
 
+-----------------------------------------------------------------
+
+How to create a Observable
+
+Lifecycle of Observable
+
+How Rxjava handles Async Execution
+
+
+-------------------------------------------------------------------
+
+Composition
+
+How different Observable are combined together.
+
+-------------------------------------------------------------------
+
+Filtering
+
+How to include filter operations in our composited operation inorder to remove unwanted data.
+
+--------------------------------------------------------------------
+
+
+Obervable Lifecycle
+
+Observable 1          
+
+Observable 2 
+
+
+Observer1 (subscribe to Observable 1,Observable 2)
+
+Observer2 (subscribe to Observable 1) 
+
+Observer3 (subscribe to Observable 2) 
+
+
+Once event is fired 
+
+Observer has 3 method onNext, onCompleted, onError
+
+Subsribe -> unsubsribe method also presnt for observer.
+
+------------------------------------------------------------------------
+
+
+There are two types of Observables
+
+1) Non Blocking Observable  
+
+(Async Execution), event can be handled by a different thread. Unsubscribe at any point in the evet stream.
+
+2) Blocking Observable 
+
+All onNext calls will be Synchronous  
+no ability to unsubscribe in the middle of event stream.
+
+-----------------------------------------------------------------------
+
+
+RxJava will let allow you to specify the thread you want your code to execute on with the help of schedulers.
+
+Schedulers - Many prepackaged options
+
+computation() will have number of threads available based on number of processing cores within scheduler.
+
+currentThread :- scheduler tell to execute the eventcode on currentThread 
+
+immediate() :- does not allow current work to finish, immediately executes eventcode. 
+
+io() :- network operations, database operations 
+
+newthread() :- newthread to be created for each unit of work.
+
+executor(Executor)/ executor(ScheduledExecutor) :-  DONT UNDERSTAND 
+
+---------------------------------------------------------------------
+
+How does Observables leverage Schedulers.  
+
+All Rxjava is Single Thread by default, so it will execute in the same thread where the subsribe method was called.
+
+Observable
+
+a) subscribeOn(Scheduler) , that Scheduler passed on determing the thread that the code will run on when subscribe method is called.
+
+b) observeOn , Scheduler when onNext, onCompete, onError. 
+
+-----------------------------------------------------------------------
+
+
+Observable Creation
+
+a) Observable.from :- , object, iterable, array, future interface, we can also pass a scheduler if we want for nonblocking 
+
+b) BlockingObservable.from(Observable o) :- will wrap the Observable with a blocking observable and return it. 
+
+public class Demo1 {
+
+    public static void main(String [] args) {
+        Observable<Integer> observable = null;
+
+        // We can pass an Iterable which is a list
+        observable = Observable.fromArray(new Integer[] {1,2,3});
+        observable.subscribe((i) -> {
+           System.out.println(i);
+        });
+
+        observable = Observable.fromIterable(getInteger());
+        observable.subscribe((i) -> {
+            System.out.println(i);
+        });
+
+        observable.observeOn(Schedulers.newThread()).subscribe((list) -> {
+                System.out.println("ok1"+Thread.currentThread());
+                System.out.println(list);
+            });
+    }
+
+    private static List<Integer> getInteger() {
+        List<Integer> abs  = new ArrayList<Integer>();
+        abs.add(10);
+        abs.add(20);
+        abs.add(30);
+        return abs;
+    }
+}
+
+
+-------------------------------------------------------------------
+
+Composition (Got Stuck, dont know how to create Observables in parallel)
+
+
+
+
 
 
 
